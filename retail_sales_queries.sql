@@ -74,16 +74,6 @@ SELECT
 FROM retail_sales
 GROUP BY gender;
 
--- Monthly Sales Trends
--- This section answers two questions: sales per month and the best-selling month.
-
--- Sales per month, ordered chronologically
-SELECT
-    TO_CHAR(sale_date, 'YYYY-MM') AS year_month,
-    SUM(total_sale) AS total
-FROM retail_sales
-GROUP BY year_month
-ORDER BY year_month ASC;
 
 -- Best-selling month overall
 SELECT
@@ -137,4 +127,5 @@ SELECT
     SUM(quantity) AS total_quantity
 FROM retail_sales
 GROUP BY category
+
 ORDER BY total_quantity DESC;
